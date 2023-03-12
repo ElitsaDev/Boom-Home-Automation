@@ -1,6 +1,6 @@
-
 import * as React from 'react';
-import { Box, Container, Paper, FormControl, TextField, InputAdornment, Button } from "@mui/material";
+import { Fragment } from 'react';
+import { FormControl, TextField, InputAdornment, Button, Typography, Link } from "@mui/material";
 
 import styles from "./Login.module.scss";
 import classNames from "classnames";
@@ -20,44 +20,40 @@ export default function Login() {
     };
 
     return (
-        <Box component="form" className={classNames(styles["login-form"])}>
-            <Container className={classNames(styles.container)} maxWidth="xl">
-                <Paper className={classNames(styles.paper)}>
-                    <FormControl className={classNames(styles.formConrtol)}
-                        sx={{ m: 1, width: '25ch' }}
-                        variant="outlined">
-                        <TextField type="email"
-                            className={classNames(styles.textField)}
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start" className={classNames(styles.input)}>
-                                        <EmailIcon className={classNames(styles.icon)} />
-                                    </InputAdornment>
-                                ),
-                            }}
-                        />
-                        <TextField type={showPassword ? 'text' : 'password'}
-                            className={classNames(styles.textField)}
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start" className={classNames(styles.input)} >
-                                        <LockIcon className={classNames(styles.icon)}
-                                            aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
-                                            edge="end"
-                                        >
-                                            {showPassword ? <VisibilityOff /> : <Visibility />}
-                                        </LockIcon>
-                                    </InputAdornment>
-                                ),
-                            }}
-                        />
-                        <Button className={styles.loginButton} variant={"contained"}>LOGIN</Button>
-                    </FormControl>
-                </Paper>
-            </Container>
-        </Box>
+        <>
+            <FormControl className={classNames(styles["login-form"])}
+                sx={{ m: 1, width: '25ch' }}
+                variant="outlined">
+                <TextField type="email"
+                    className={classNames(styles.textField)}
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start" className={classNames(styles.input)}>
+                                <EmailIcon className={classNames(styles.icon)} />
+                            </InputAdornment>
+                        ),
+                    }}
+                />
+                <TextField type={showPassword ? 'text' : 'password'}
+                    className={classNames(styles.textField)}
+                    InputProps={{
+                        startAdornment: (
+                            <InputAdornment position="start" className={classNames(styles.input)} >
+                                <LockIcon className={classNames(styles.icon)}
+                                    aria-label="toggle password visibility"
+                                    onClick={handleClickShowPassword}
+                                    onMouseDown={handleMouseDownPassword}
+                                    edge="end"
+                                >
+                                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                                </LockIcon>
+                            </InputAdornment>
+                        ),
+                    }}
+                />
+                <Button className={styles.loginButton} variant={"contained"}>LOGIN</Button>
+            </FormControl>
+        </>
     );
 }
 
