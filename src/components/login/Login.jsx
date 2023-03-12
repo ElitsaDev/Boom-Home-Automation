@@ -20,10 +20,10 @@ export default function Login() {
     };
 
     return (
-        <Box component="form" className={classNames(styles.wrapper)}>
+        <Box component="form" className={classNames(styles["login-form"])}>
             <Container className={classNames(styles.container)} maxWidth="xl">
                 <Paper className={classNames(styles.paper)}>
-                    <FormControl className={classNames(styles["login-form"])}
+                    <FormControl className={classNames(styles.formConrtol)}
                         sx={{ m: 1, width: '25ch' }}
                         variant="outlined">
                         <TextField type="email"
