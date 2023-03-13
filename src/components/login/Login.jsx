@@ -24,7 +24,11 @@ export default function Login() {
             <FormControl className={classNames(styles["login-form"])}
                 sx={{ m: 1, width: '25ch' }}
                 variant="outlined">
-                <TextField type="email"
+                <TextField 
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
                     className={classNames(styles.textField)}
                     InputProps={{
                         startAdornment: (
@@ -34,7 +38,11 @@ export default function Login() {
                         ),
                     }}
                 />
-                <TextField type={showPassword ? 'text' : 'password'}
+                <TextField 
+                    type={showPassword ? 'text' : 'password'}
+                    id="password"
+                    name="password"
+                    required
                     className={classNames(styles.textField)}
                     InputProps={{
                         startAdornment: (
@@ -51,7 +59,11 @@ export default function Login() {
                         ),
                     }}
                 />
-                <Button className={styles.loginButton} variant={"contained"}>LOGIN</Button>
+                <Button 
+                    className={styles.loginButton}
+                    type="submit" 
+                    variant={"contained"}
+                >LOGIN</Button>
             </FormControl>
         </>
     );

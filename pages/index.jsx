@@ -4,6 +4,6 @@ import LoginPage from "../src/components/loginPage/LoginPage"
 export default function Index() {
 
   return (
-  <LoginPage />
+  <Example />
   );
 }
