@@ -22,7 +22,7 @@ export default function Weather({
                             Weather
                         </Typography>
                         <Typography className={styles.degrees} >
-                            {degrees}
+                            {degrees}&deg;
                         </Typography>
                     </Grid>
                 </Grid>
