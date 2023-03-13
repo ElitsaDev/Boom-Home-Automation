@@ -1,0 +1,24 @@
+@use "../../styles/colors";
+
+.time-wrapper {
+    background-color: colors.$text_primary;
+    text-align: center;
+}
+
+.header {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px !important;
+    line-height: 18px;
+    color: colors.$primary_main;
+}
+
+.time {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px !important;
+    line-height: 70px;
+    color: #181C24;
+}
