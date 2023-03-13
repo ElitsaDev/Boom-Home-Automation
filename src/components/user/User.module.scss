@@ -1,0 +1,23 @@
+@use "../../styles/colors";
+
+.user-container {
+    position: relative;
+    background-color: colors.$text_primary;
+}
+
+.image {
+    border-radius: 100%;
+}
+
+.userName {
+    display: flex !important; 
+    justify-content: center;
+    margin-left: 14px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #181C24;
+    align-self: center;
+}

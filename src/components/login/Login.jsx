@@ -20,7 +20,7 @@ export default function Login() {
     };
 
     return (
-        <>
+        <Fragment>
             <FormControl className={classNames(styles["login-form"])}
                 sx={{ m: 1, width: '25ch' }}
                 variant="outlined">
@@ -65,7 +65,7 @@ export default function Login() {
                     variant={"contained"}
                 >LOGIN</Button>
             </FormControl>
-        </>
+        </Fragment>
     );
 }
 
