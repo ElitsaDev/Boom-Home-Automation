@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 export default function Weather({
     degrees,
-    type,
+    type = "sunny",
 }) {
     return (
         <div className={classNames(styles["weather-wrapper"])}>

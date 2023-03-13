@@ -1,0 +1,31 @@
+@use "../../styles/colors";
+
+.header-wrapper{
+    padding: 100px;
+    background-color: colors.$primary_main;
+}
+
+.container {
+    overflow: hidden;
+    margin-top: 77px;
+    height: 195px;
+    width: 100%;
+    box-shadow: 0px 5px 50px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    background-color: colors.$text_primary;
+}
+
+.paper {
+    height: 195px;
+
+}
+
+.left {
+    display: inline-flex;
+    position: relative;
+}
+
+.right {
+    display: inline-flex;
+    position: relative;  
+}
