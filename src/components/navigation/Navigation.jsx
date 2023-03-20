@@ -40,27 +40,26 @@ export default function Navigation() {
             anchor="left"
         >
             <Paper className={classNames(styles.paper)} sx={{ maxWidth: '100%', top: 0 }}>
-                <Toolbar >
+                
                     <User />
                     <IconButton onClick={handleBadgeVisibility}>
-                         <MoreVertIcon className={classNames(styles.moreVertIcon)}  />
-                        
-                        <Menu onClick={handleClick}>
-                            <MenuItem >
-                                    <Badge className={classNames(styles.badge)}
-                                    badgeContent="Logout"
+                        <MoreVertIcon className={classNames(styles.moreVertIcon)}  />
+                        <Badge className={classNames(styles.badge)}   
                                     anchorOrigin={{
                                         vertical: 'bottom',
                                         horizontal: 'right',
                                     }}
 
                                     invisible={invisible}
-                                >     
-                                </Badge>
+                                >           
+                        <Menu onClick={handleClick}>
+                            <MenuItem >Logout
+                                    
                             </MenuItem>
                         </Menu>
+                        </Badge>
                     </IconButton>
-                </Toolbar>
+              
                 <MenuList>
                     <MenuItem disablePadding className={classNames(styles.mainItems)} >
                         <ListItemIcon>
