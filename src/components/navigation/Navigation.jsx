@@ -41,8 +41,7 @@ export default function Navigation() {
             variant="permanent"
             anchor="left"
         >
-            <Paper className={classNames(styles.paper)} sx={{ maxWidth: '100%', top: 0 }}>
-               
+            
                     <User />
                     {/* <IconButton onClick={handleBadgeVisibility}>
                         <MoreVertIcon className={classNames(styles.moreVertIcon)}  />
@@ -132,7 +131,7 @@ export default function Navigation() {
                         </ListItem>
                     ))}
                 </MenuList>
-            </Paper>
+          
         </Drawer>
     );
 }
