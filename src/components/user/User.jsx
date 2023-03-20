@@ -6,6 +6,8 @@ export default function User({
     avatar,
     name,
     size,
+    headingSize, 
+    hasWelcome = false
 }) {
     return (
         <div className={classNames(styles["user-container"])}>
@@ -21,7 +23,8 @@ export default function User({
                         </Avatar>
                     </Grid>
                     <Grid item xs={6}>
-                        <Typography className={styles.userName}>
+                        <Typography className={styles.userName} variant={headingSize}>
+                            {hasWelcome && "Welcome back,"}
                             {name}
                         </Typography>
                     </Grid>
