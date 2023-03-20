@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Navigation.module.scss";
 import classNames from "classnames";
 
-import { Drawer, IconButton, ListItem, MenuList, MenuItem, ListItemIcon, Badge, ListItemText, Typography, Menu } from "@mui/material";
+import { Drawer, IconButton, ListItem, MenuList, MenuItem, ListItemIcon, Badge, ListItemText, Typography, Menu, List } from "@mui/material";
 
 import User from "../user/User";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
@@ -27,7 +27,6 @@ export default function Navigation() {
     let roomsHouse = ['Living Room', 'Bedroom 1', 'Bedroom 2', 'Bedroom 3', 'Bathroom', 'Toilet', 'Patio'];
 
     return (
-
         <Drawer className={classNames(styles.container)}
             sx={{
                 width: drawerWidth,
@@ -39,8 +38,9 @@ export default function Navigation() {
             }}
             variant="permanent"
             anchor="left"
-        >
-            
+        > 
+        <List>  
+            <ListItem>
                     <User />
                     {/* <IconButton onClick={handleBadgeVisibility}>
                         <MoreVertIcon className={classNames(styles.moreVertIcon)}  />
@@ -89,7 +89,7 @@ export default function Navigation() {
                             {'Close'}
                         </MenuItem>
                     </Menu>
-                  
+                    </ListItem>
                 <MenuList>
                     <MenuItem  className={classNames(styles.mainItems)} >
                         <ListItemIcon>
@@ -97,7 +97,7 @@ export default function Navigation() {
                         </ListItemIcon>
                         <ListItemText primary='Apartment' />
                         <div className={classNames(styles.numberRooms)}>
-                            <Badge>
+                            <Badge className={classNames(styles.badge)} invisible={invisible}>
                             <Typography className={classNames(styles.typography)}>{roomsApartment.length}</Typography>
                             </Badge>
                         </div>
@@ -119,7 +119,7 @@ export default function Navigation() {
                         </ListItemIcon>
                         <ListItemText primary='House' />
                         <div className={classNames(styles.numberRooms)}>
-                            <Badge>
+                            <Badge className={classNames(styles.badge)} invisible={invisible}>
                                 <Typography className={classNames(styles.typography)}>{roomsHouse.length}</Typography>
                             </Badge>
                         </div>
@@ -135,7 +135,7 @@ export default function Navigation() {
                         </ListItem>
                     ))}
                 </MenuList>
-               
+                </List> 
         </Drawer>
     );
 }
