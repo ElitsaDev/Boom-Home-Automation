@@ -42,7 +42,7 @@ export default function Navigation() {
             anchor="left"
         >
             <Paper className={classNames(styles.paper)} sx={{ maxWidth: '100%', top: 0 }}>
-                <Toolbar>
+               
                     <User />
                     {/* <IconButton onClick={handleBadgeVisibility}>
                         <MoreVertIcon className={classNames(styles.moreVertIcon)}  />
@@ -71,26 +71,26 @@ export default function Navigation() {
                     >
                         <MoreVertIcon className={classNames(styles.moreVertIcon)} />
                     </IconButton>
-                </Toolbar>
-                <Menu
-                    id="long-menu"
-                    MenuListProps={{
-                        'aria-labelledby': 'long-button',
-                    }}
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    PaperProps={{
-                        style: {
-                            maxHeight: ITEM_HEIGHT * 4.5,
-                            width: '20ch',
-                        },
-                    }}
-                >
-                    <MenuItem onClick={handleClose}>
-                        {'Close'}
-                    </MenuItem>
-                </Menu>
+               
+                    <Menu
+                        id="long-menu"
+                        MenuListProps={{
+                            'aria-labelledby': 'long-button',
+                        }}
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        PaperProps={{
+                            style: {
+                                maxHeight: ITEM_HEIGHT * 4.5,
+                                width: '20ch',
+                            },
+                        }}
+                    >
+                        <MenuItem onClick={handleClose}>
+                            {'Close'}
+                        </MenuItem>
+                    </Menu>
                 <MenuList>
                     <MenuItem disablePadding className={classNames(styles.mainItems)} >
                         <ListItemIcon>
