@@ -2,10 +2,9 @@ import { useState } from "react";
 import styles from "./Navigation.module.scss";
 import classNames from "classnames";
 
-import { Paper, Drawer, IconButton, ListItem, MenuList, MenuItem, ListItemIcon, Badge, ListItemText, Typography, Menu } from "@mui/material";
+import { Drawer, IconButton, ListItem, MenuList, MenuItem, ListItemIcon, Badge, ListItemText, Typography, Menu } from "@mui/material";
 
 import User from "../user/User";
-import { Toolbar } from "@mui/material";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import BedOutlinedIcon from '@mui/icons-material/BedOutlined';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -90,19 +89,22 @@ export default function Navigation() {
                             {'Close'}
                         </MenuItem>
                     </Menu>
+                  
                 <MenuList>
-                    <MenuItem disablePadding className={classNames(styles.mainItems)} >
+                    <MenuItem  className={classNames(styles.mainItems)} >
                         <ListItemIcon>
                             <HomeOutlinedIcon className={classNames(styles.homeIcon)} />
                         </ListItemIcon>
                         <ListItemText primary='Apartment' />
                         <div className={classNames(styles.numberRooms)}>
+                            <Badge>
                             <Typography className={classNames(styles.typography)}>{roomsApartment.length}</Typography>
+                            </Badge>
                         </div>
 
                     </MenuItem>
                     {roomsApartment.map((text, index) => (
-                        <ListItem key={index} disablePadding className={classNames(styles.subItems)}>
+                        <ListItem key={index}  className={classNames(styles.subItems)}>
                             <ListItemIcon>
                                 <BedOutlinedIcon className={classNames(styles.subIcon)} />
                             </ListItemIcon>
@@ -111,13 +113,15 @@ export default function Navigation() {
                             </IconButton>
                         </ListItem>
                     ))}
-                    <MenuItem disablePadding className={classNames(styles.mainItems)} >
+                    <MenuItem  className={classNames(styles.mainItems)} >
                         <ListItemIcon>
                             <HomeOutlinedIcon className={classNames(styles.homeIcon)} />
                         </ListItemIcon>
                         <ListItemText primary='House' />
                         <div className={classNames(styles.numberRooms)}>
-                            <Typography className={classNames(styles.typography)}>{roomsHouse.length}</Typography>
+                            <Badge>
+                                <Typography className={classNames(styles.typography)}>{roomsHouse.length}</Typography>
+                            </Badge>
                         </div>
                     </MenuItem>
                     {roomsHouse.map((text, index) => (
@@ -131,7 +135,7 @@ export default function Navigation() {
                         </ListItem>
                     ))}
                 </MenuList>
-          
+               
         </Drawer>
     );
 }
