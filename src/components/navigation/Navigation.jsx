@@ -11,20 +11,22 @@ import BedOutlinedIcon from '@mui/icons-material/BedOutlined';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 const drawerWidth = 245;
+const ITEM_HEIGHT = 44;
 
 export default function Navigation() {
     const [invisible, setInvisible] = useState(false);
-
-    const handleBadgeVisibility = () => {
-        setInvisible(!invisible);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
     };
-
-    const handleClick = () => {
-        setInvisible(!invisible);
-      };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
     let roomsApartment = ['Living Room', 'Bedroom', 'Bathroom', 'Toilet', 'Patio'];
     let roomsHouse = ['Living Room', 'Bedroom 1', 'Bedroom 2', 'Bedroom 3', 'Bathroom', 'Toilet', 'Patio'];
+
     return (
 
         <Drawer className={classNames(styles.container)}
@@ -40,9 +42,9 @@ export default function Navigation() {
             anchor="left"
         >
             <Paper className={classNames(styles.paper)} sx={{ maxWidth: '100%', top: 0 }}>
-                
+                <Toolbar>
                     <User />
-                    <IconButton onClick={handleBadgeVisibility}>
+                    {/* <IconButton onClick={handleBadgeVisibility}>
                         <MoreVertIcon className={classNames(styles.moreVertIcon)}  />
                         <Badge className={classNames(styles.badge)}   
                                     anchorOrigin={{
@@ -58,8 +60,37 @@ export default function Navigation() {
                             </MenuItem>
                         </Menu>
                         </Badge>
+                    </IconButton> */}
+                    <IconButton
+                        aria-label="more"
+                        id="long-button"
+                        aria-controls={open ? 'long-menu' : undefined}
+                        aria-expanded={open ? 'true' : undefined}
+                        aria-haspopup="true"
+                        onClick={handleClick}
+                    >
+                        <MoreVertIcon className={classNames(styles.moreVertIcon)} />
                     </IconButton>
-              
+                </Toolbar>
+                <Menu
+                    id="long-menu"
+                    MenuListProps={{
+                        'aria-labelledby': 'long-button',
+                    }}
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    PaperProps={{
+                        style: {
+                            maxHeight: ITEM_HEIGHT * 4.5,
+                            width: '20ch',
+                        },
+                    }}
+                >
+                    <MenuItem onClick={handleClose}>
+                        {'Close'}
+                    </MenuItem>
+                </Menu>
                 <MenuList>
                     <MenuItem disablePadding className={classNames(styles.mainItems)} >
                         <ListItemIcon>
