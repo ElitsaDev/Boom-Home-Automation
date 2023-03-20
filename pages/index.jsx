@@ -7,16 +7,19 @@ import Header from "../src/components/header/Header";
 import User from "../src/components/user/User";
 import Weather from "../src/components/weather/Weather";
 import Time from "../src/components/time/Time";
-
+import Navigation from "../src/components/navigation/Navigation";
 
 export default function Index() {
 
   return (
-    <Header left={<User />}
+    <>
+    {/* <Header left={<User />}
             right={<Fragment>
                       <Weather />
                       <Time />
                   </Fragment>} 
-    />
+    /> */}
+    <Navigation />
+    </>
   );
 }
