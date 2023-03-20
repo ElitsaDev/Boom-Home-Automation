@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Navigation.module.scss";
 import classNames from "classnames";
 
-import { Paper, Drawer, IconButton, ListItem, MenuList, MenuItem, ListItemIcon, Badge, ListItemText, Typography } from "@mui/material";
+import { Paper, Drawer, IconButton, ListItem, MenuList, MenuItem, ListItemIcon, Badge, ListItemText, Typography, Menu } from "@mui/material";
 
 import User from "../user/User";
 import { Toolbar } from "@mui/material";
@@ -13,11 +13,15 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 const drawerWidth = 245;
 
 export default function Navigation() {
-    const [invisible, setInvisible] = useState(true);
+    const [invisible, setInvisible] = useState(false);
 
     const handleBadgeVisibility = () => {
         setInvisible(!invisible);
     };
+
+    const handleClick = () => {
+        setInvisible(!invisible);
+      };
 
     let roomsApartment = ['Living Room', 'Bedroom', 'Bathroom', 'Toilet', 'Patio'];
     let roomsHouse = ['Living Room', 'Bedroom 1', 'Bedroom 2', 'Bedroom 3', 'Bathroom', 'Toilet', 'Patio'];
@@ -39,17 +43,22 @@ export default function Navigation() {
                 <Toolbar >
                     <User />
                     <IconButton onClick={handleBadgeVisibility}>
-                        <Badge className={classNames(styles.badge)}
-                            badgeContent="Logout"
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'right',
-                            }}
+                         <MoreVertIcon className={classNames(styles.moreVertIcon)}  />
+                        
+                        <Menu onClick={handleClick}>
+                            <MenuItem >
+                                    <Badge className={classNames(styles.badge)}
+                                    badgeContent="Logout"
+                                    anchorOrigin={{
+                                        vertical: 'bottom',
+                                        horizontal: 'right',
+                                    }}
 
-                            invisible={invisible}
-                        >
-                            <MoreVertIcon className={classNames(styles.moreVertIcon)} />
-                        </Badge>
+                                    invisible={invisible}
+                                >     
+                                </Badge>
+                            </MenuItem>
+                        </Menu>
                     </IconButton>
                 </Toolbar>
                 <MenuList>
