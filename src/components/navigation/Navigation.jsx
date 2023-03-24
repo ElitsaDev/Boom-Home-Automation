@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./Navigation.module.scss";
 import classNames from "classnames";
-
-import { Drawer, IconButton, ListItem, MenuList, MenuItem, ListItemIcon, Badge, ListItemText, Typography, Menu, List } from "@mui/material";
+import Menu from '@mui/material/Menu';
+import { Drawer, IconButton, ListItem, MenuList, MenuItem, ListItemIcon, Badge, ListItemText, Typography, List } from "@mui/material";
 
 import User from "../user/User";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
@@ -38,27 +38,10 @@ export default function Navigation() {
             }}
             variant="permanent"
             anchor="left"
-        > 
-        <List>  
-            <ListItem>
+        >
+            <List>
+                <ListItem>
                     <User />
-                    {/* <IconButton onClick={handleBadgeVisibility}>
-                        <MoreVertIcon className={classNames(styles.moreVertIcon)}  />
-                        <Badge className={classNames(styles.badge)}   
-                                    anchorOrigin={{
-                                        vertical: 'bottom',
-                                        horizontal: 'right',
-                                    }}
-
-                                    invisible={invisible}
-                                >           
-                        <Menu onClick={handleClick}>
-                            <MenuItem >Logout
-                                    
-                            </MenuItem>
-                        </Menu>
-                        </Badge>
-                    </IconButton> */}
                     <IconButton
                         aria-label="more"
                         id="long-button"
@@ -69,7 +52,7 @@ export default function Navigation() {
                     >
                         <MoreVertIcon className={classNames(styles.moreVertIcon)} />
                     </IconButton>
-               
+
                     <Menu
                         id="long-menu"
                         MenuListProps={{
@@ -89,22 +72,22 @@ export default function Navigation() {
                             {'Close'}
                         </MenuItem>
                     </Menu>
-                    </ListItem>
+                </ListItem>
                 <MenuList>
-                    <MenuItem  className={classNames(styles.mainItems)} >
+                    <MenuItem className={classNames(styles.mainItems)} >
                         <ListItemIcon>
                             <HomeOutlinedIcon className={classNames(styles.homeIcon)} />
                         </ListItemIcon>
                         <ListItemText primary='Apartment' />
                         <div className={classNames(styles.numberRooms)}>
                             <Badge className={classNames(styles.badge)} invisible={invisible}>
-                            <Typography className={classNames(styles.typography)}>{roomsApartment.length}</Typography>
+                                <Typography className={classNames(styles.typography)}>{roomsApartment.length}</Typography>
                             </Badge>
                         </div>
 
                     </MenuItem>
                     {roomsApartment.map((text, index) => (
-                        <ListItem key={index}  className={classNames(styles.subItems)}>
+                        <ListItem key={index} className={classNames(styles.subItems)}>
                             <ListItemIcon>
                                 <BedOutlinedIcon className={classNames(styles.subIcon)} />
                             </ListItemIcon>
@@ -113,7 +96,8 @@ export default function Navigation() {
                             </IconButton>
                         </ListItem>
                     ))}
-                    <MenuItem  className={classNames(styles.mainItems)} >
+                    <Menu> <MenuItem>bomas</MenuItem></Menu>
+                    <MenuItem className={classNames(styles.mainItems)} >
                         <ListItemIcon>
                             <HomeOutlinedIcon className={classNames(styles.homeIcon)} />
                         </ListItemIcon>
@@ -134,8 +118,9 @@ export default function Navigation() {
                             </IconButton>
                         </ListItem>
                     ))}
+
                 </MenuList>
-                </List> 
+            </List>
         </Drawer>
     );
 }
