@@ -75,16 +75,13 @@ export default function Navigation() {
                 </ListItem>
                 <MenuList>
                     <MenuItem className={classNames(styles.mainItems)} >
-                        <ListItemIcon>
-                            <HomeOutlinedIcon className={classNames(styles.homeIcon)} />
-                        </ListItemIcon>
-                        <ListItemText primary='Apartment' />
+                        <HomeOutlinedIcon className={classNames(styles.homeIcon)} />
+                            <Typography className={classNames(styles.title)}>Apartment</Typography>
                         <div className={classNames(styles.numberRooms)}>
                             <Badge className={classNames(styles.badge)} invisible={invisible}>
                                 <Typography className={classNames(styles.typography)}>{roomsApartment.length}</Typography>
                             </Badge>
                         </div>
-
                     </MenuItem>
                     {roomsApartment.map((text, index) => (
                         <ListItem key={index} className={classNames(styles.subItems)}>
@@ -96,12 +93,10 @@ export default function Navigation() {
                             </IconButton>
                         </ListItem>
                     ))}
-                    <Menu> <MenuItem>bomas</MenuItem></Menu>
+                    
                     <MenuItem className={classNames(styles.mainItems)} >
-                        <ListItemIcon>
-                            <HomeOutlinedIcon className={classNames(styles.homeIcon)} />
-                        </ListItemIcon>
-                        <ListItemText primary='House' />
+                        <HomeOutlinedIcon className={classNames(styles.homeIcon)} />
+                            <Typography className={classNames(styles.title)}>House</Typography>
                         <div className={classNames(styles.numberRooms)}>
                             <Badge className={classNames(styles.badge)} invisible={invisible}>
                                 <Typography className={classNames(styles.typography)}>{roomsHouse.length}</Typography>
