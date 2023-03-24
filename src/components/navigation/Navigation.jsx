@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./Navigation.module.scss";
 import classNames from "classnames";
-import Menu from '@mui/material/Menu';
-import { Drawer, IconButton, ListItem, MenuList, MenuItem, ListItemIcon, Badge, ListItemText, Typography, List } from "@mui/material";
+
+import { Drawer, IconButton, ListItem, Menu, MenuList, MenuItem, ListItemIcon, Badge, ListItemText, Typography, List } from "@mui/material";
 
 import User from "../user/User";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
