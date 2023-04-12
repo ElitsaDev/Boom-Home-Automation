@@ -8,9 +8,16 @@ import User from "../src/components/user/User";
 import Weather from "../src/components/weather/Weather";
 import Time from "../src/components/time/Time";
 import Navigation from "../src/components/navigation/Navigation";
-
+import Thermostat from "../src/components/thermostat/Thermostat";
 export default function Index() {
-
+  const data = [
+    { temperature: 25, hour: 12 },
+    { temperature: 13, hour: 13 },
+    { temperature: 14, hour: 14 },
+    { temperature: 15, hour: 15 },
+    { temperature: 15, hour: 16 },
+    { temperature: 10, hour: 17 },
+]
   return (
     <>
     {/* <Header left={<User />}
@@ -19,7 +26,8 @@ export default function Index() {
                       <Time />
                   </Fragment>} 
     /> */}
-    <Navigation />
+     {/* <Navigation />  */}
+     <Thermostat data={data} /> 
     </>
   );
 }

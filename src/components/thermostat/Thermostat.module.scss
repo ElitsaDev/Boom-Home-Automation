@@ -1,0 +1,110 @@
+@use "../../styles/colors";
+
+.container {
+    padding-left: 0%;
+    padding-right: 0%;
+    width: 803px;
+    height: 402px;  
+ }
+
+.paper {
+    width: 100%;
+    height: 100%;
+    font-size: 10rem;
+    background: linear-gradient(284.07deg, #EC6953 0%, #DF53A8 100%);
+    border-radius: 20px; 
+    text-align: center;
+}
+
+.progressLeft{
+    top: -200px; 
+    color: #FFFFFF;
+    box-shadow: 0px 3.28826px 8.22064px rgba(0, 0, 0, 0.15);
+    width: 37px;
+    height: 37px;
+}
+
+.progressRight{
+    top: -200px;
+    right: 550px;
+    color: #FFFFFF;
+    box-shadow: 0px 3.28826px 8.22064px rgba(0, 0, 0, 0.15);
+    width: 37px;
+    height: 37px; 
+}
+
+.circular {
+    left: 4.12px;
+    top: 20%;
+    text-align: center;
+}
+
+.containerTermostat{
+    width: 100%;
+    height: 402px;
+    background: linear-gradient(284.07deg, #EC6953 0%, #DF53A8 100%);
+    border-radius: 20px ; 
+    text-align: center;
+}
+
+.temperature-text{
+    left: 35%;
+    top: 100px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 85.4366px;
+    line-height: 100px;
+}
+
+.chartContainer{
+    position: relative;
+    padding: 0px;
+    top: -150px;
+    width: 100%;
+    height: 170px;
+    background: linear-gradient(284.07deg, #EC6953 0%, #DF53A8 100%);
+    backdrop-filter: blur(11px);
+    border-radius: 0 0 20px 20px;
+    z-index: 1;
+}
+
+.chart-text{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px; 
+    position: absolute;
+    left: 20.18%;
+    right: 67.53%;
+    top: 39.49%;
+    bottom: 59.36%;
+}
+
+.chart {
+    color: #000;
+    width: 802px;
+    height: 170px;
+    backdrop-filter: blur(11px);
+    background: linear-gradient(284.07deg, #EC6953 0%, #DF53A8 100%);
+}
+
+.thermostat-wrapper {
+    background: linear-gradient(284.07deg, #ec6953 0%, #df53a8 100%);
+    border-radius: 20px 20px 0 0 ;
+    overflow: hidden;
+    position: relative;
+    padding-top: 17px;
+    max-height: 402px;
+}
+
+.temperature-text {
+    position: absolute;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 85px;
+    line-height: 100px;
+    color: #ffffff;
+}
