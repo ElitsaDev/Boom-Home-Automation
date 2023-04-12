@@ -9,6 +9,7 @@ import Weather from "../src/components/weather/Weather";
 import Time from "../src/components/time/Time";
 import Navigation from "../src/components/navigation/Navigation";
 import Thermostat from "../src/components/thermostat/Thermostat";
+import ActionAreaCard from "../src/components/card/Card";
 export default function Index() {
   const data = [
     { temperature: 25, hour: 12 },
@@ -27,7 +28,8 @@ export default function Index() {
                   </Fragment>} 
     /> */}
      {/* <Navigation />  */}
-     <Thermostat data={data} /> 
+     {/* <Thermostat data={data} />  */}
+     <ActionAreaCard />
     </>
   );
 }
