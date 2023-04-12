@@ -9,7 +9,7 @@ export default function CardComponent({ iconUrl, outlined = false, onClick }) {
         <Card className={classNames(styles.card, outlined == true && styles.border)} onClick={onClick}>
             <CardActionArea>
                 <CardContent>
-                    {iconUrl !== '' &&
+                    {!!iconUrl  &&
                         <CardMedia
                             component="img"
                             image={iconUrl}
