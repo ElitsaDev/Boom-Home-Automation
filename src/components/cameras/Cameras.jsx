@@ -22,16 +22,15 @@ export default function Cameras({
 
     return (
         <div className={classNames(styles["cameras-container"])}>
+            <video>
             <Grid item xs={12} container>
                 <Grid item xs container direction="column" spacing={3}>
                     <Grid item xs={9} >
-                        <video>
                             <CardComponent
                                 className={styles.box}
-                                iconUrl={cameras[id].videoUrl}
+                                iconUrl={'/videos/balcony.mp4'}
                                 allow="autoPlay"
                             />
-                        </video>
                     </Grid>
 
                     <Grid item xs={3}>
@@ -39,12 +38,13 @@ export default function Cameras({
 
                             <Grid item xs={12}>
                                 <Grid item xs container direction="row" spacing={1}>
-                                    <Grid item xs={6}>
-                                        {cameras.map(camera =>
-                                            <video key={camera.id}>
-                                                <CardComponent height="50px" width="50px" iconUrl={camera.videoUrl} onClick={onClick} />
-                                            </video>)}
-                                    </Grid>
+                                    {cameras.map((camera, index) =>
+                                    
+                                    <Grid key={index} item xs={6}>  
+                                    
+                                        <CardComponent height="50px" width="50px" iconUrl={'/videos/balcony.mp4'} onClick={onClick} />    
+                                    
+                                   </Grid>)}
 
                                 </Grid>
                             </Grid>
@@ -53,6 +53,7 @@ export default function Cameras({
 
                 </Grid>
             </Grid>
+            </video>
         </div>
     );
 }

@@ -10,6 +10,7 @@ import Time from "../src/components/time/Time";
 import Navigation from "../src/components/navigation/Navigation";
 import Thermostat from "../src/components/thermostat/Thermostat";
 import ActionAreaCard from "../src/components/card/Card";
+import Cameras from "../src/components/cameras/Cameras";
 export default function Index() {
   const data = [
     { temperature: 25, hour: 12 },
@@ -29,7 +30,8 @@ export default function Index() {
     /> */}
      {/* <Navigation />  */}
      {/* <Thermostat data={data} />  */}
-     <ActionAreaCard />
+     {/* <ActionAreaCard /> */}
+     <Cameras />
     </>
   );
 }
