@@ -5,13 +5,12 @@ import React, { useState } from "react";
 import CardComponent from "../card/Card";
 export default function Cameras({
     cameras = [
-        { videoUrl: "/balcony.mp4" },
-        { videoUrl: "./video/bathroom.mp4" },
-        { videoUrl: "/video/front-door.mp4" },
-        { videoUrl: "/video/garden.mp4" },
-        { videoUrl: "/video/kitchen.mp4" },
-        { videoUrl: "/video/living room 2.mp4" },
-        { videoUrl: "/video/living room 2.mp4" },
+        { videoUrl: "/videos/balcony.mp4" },
+        { videoUrl: "/videos/balcony.mp4" },
+        { videoUrl: "/videos/balcony.mp4" },
+        { videoUrl: "/videos/balcony.mp4" },
+        { videoUrl: "/videos/balcony.mp4" },
+        { videoUrl: "/videos/balcony.mp4" },
     ],
     hasButton = true,
 }) {
