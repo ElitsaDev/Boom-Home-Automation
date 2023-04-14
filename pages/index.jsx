@@ -11,14 +11,24 @@ import Navigation from "../src/components/navigation/Navigation";
 import Thermostat from "../src/components/thermostat/Thermostat";
 import ActionAreaCard from "../src/components/card/Card";
 import Cameras from "../src/components/cameras/Cameras";
+import Energy from "../src/components/energy/Energy";
 export default function Index() {
-  const data = [
+/*  const data = [
     { temperature: 25, hour: 12 },
     { temperature: 13, hour: 13 },
     { temperature: 14, hour: 14 },
     { temperature: 15, hour: 15 },
     { temperature: 15, hour: 16 },
     { temperature: 10, hour: 17 },
+]*/
+
+const data = [
+  { energy: 25, hour: 12 },
+  { energy: 13, hour: 13 },
+  { energy: 14, hour: 14 },
+  { energy: 15, hour: 15 },
+  { energy: 15, hour: 16 },
+  { energy: 10, hour: 17 },
 ]
   return (
     <>
@@ -31,7 +41,7 @@ export default function Index() {
      {/* <Navigation />  */}
      {/* <Thermostat data={data} />  */}
      {/* <ActionAreaCard /> */}
-     <Cameras />
+     <Energy data={data}/>
     </>
   );
 }

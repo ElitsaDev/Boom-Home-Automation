@@ -1,0 +1,41 @@
+@use "../../styles/colors";
+
+.container {
+    background: #E5E5E5;
+}
+.chartContainer {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.title {
+    margin-bottom: 14.7px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    color: #181C24;
+    display: inline-flex;
+}
+
+.cardSelect {
+    display: inline-flex;
+    position:relative;
+    width: 220px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-top: 16px ;
+    margin-bottom: 18px;
+    margin-left: 25px;
+  }
+  
+  .inputLabel {
+    color: colors.$primary_main !important;
+    font-size: 16px !important;
+  }
+
+.chartLine {
+    line-height: 15px;
+}
