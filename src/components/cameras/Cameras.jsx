@@ -15,8 +15,8 @@ export default function Cameras({
     hasButton = true,
 }) {
     const [id, setId] = useState(0);
-    const onClick = (item) => {
-        setId(item.id)
+    const onClick = (id) => {
+        setId(id)
     }
 
     return (
@@ -26,8 +26,9 @@ export default function Cameras({
                 <Grid item xs container direction="column" spacing={3}>
                     <Grid item xs={9} >
                             <CardComponent
+                                component="video"
                                 className={styles.box}
-                                iconUrl={'/videos/balcony.mp4'}
+                                iconUrl={cameras[id].videoUrl}
                                 allow="autoPlay"
                             />
                     </Grid>
@@ -41,7 +42,7 @@ export default function Cameras({
                                     
                                     <Grid key={index} item xs={6}>  
                                     
-                                        <CardComponent height="50px" width="50px" iconUrl={'/videos/balcony.mp4'} onClick={onClick} />    
+                                        <CardComponent component="video" height="50px" width="50px" iconUrl={camera[videoUrl]} onClick={onClick(index)} />    
                                     
                                    </Grid>)}
 
