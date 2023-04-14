@@ -4,7 +4,7 @@ import styles from "./Weather.module.scss";
 import classNames from "classnames";
 
 export default function Weather({
-    degrees,
+    degrees =22,
     type = "sunny",
 }) {
     return (

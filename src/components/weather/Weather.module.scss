@@ -7,6 +7,7 @@
 .image {
     width: 100%;
     height: 100px;
+    margin-left:250px;
 }
 
 .header {
@@ -19,6 +20,7 @@
 }
 
 .degrees {
+    position: relative;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;

@@ -3,7 +3,7 @@ import styles from "./User.module.scss";
 import classNames from "classnames";
 
 export default function User({
-    avatar,
+    avatar = '/images/avatar.png',
     name,
     size,
     headingSize, 
