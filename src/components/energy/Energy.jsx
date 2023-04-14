@@ -8,27 +8,23 @@ export default function Energy({ data }) {
         <div >
             <Grid container className={styles.container}>
                 <Grid item xs={12}>
-                    <Grid item xs={9} >
                         <Typography variant="h4" className={styles.title}>Energy</Typography>
-                    </Grid>
-                    <Grid item xs={3}>
                         <FormControl className={styles.cardSelect}  >
-                            <InputLabel id="demo-simple-select-label">This week</InputLabel>
-                            <Select className={styles.inputLabel}
+                            <InputLabel id="demo-simple-select-label" className={styles.inputLabel}>This week</InputLabel>
+                            <Select className={styles.select}
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
                                 label="This week"
                             >
                                 <MenuItem >This week </MenuItem>
                             </Select>
-                        </FormControl>
-                    </Grid>
+                        </FormControl>   
                 </Grid>
                 <Grid item xs={12}>
                     <ComposedChart width={803} height={389} data={data} className={classNames(styles.chartContainer)}>
                         <CartesianGrid strokeDasharray="3 3" />
-                        <Line type="monotone" dataKey="energy" stroke="#DF54A7" className={styles.chartLine} />
-                        <Area type="monotone" dataKey="energy" fill='#DF54A7' />
+                        <Line type="monotone" dataKey="energy" stroke="#DF54A7"  />
+                        <Area type="monotone" dataKey="energy" fill='#DF54A7' className={styles.area} />
                         <XAxis dataKey="hour" dot />
                         <YAxis hide />
                         <Tooltip />

@@ -20,13 +20,20 @@
 }
 
 .button {
+    position: relative;
     width: 210px;
     height: 90px;
 }
 
-.item {
+.item {  
+    margin: 3px;
+    position: relative;
     width: 97px;
     height: 90px;
     border-radius: 20px;
     overflow: hidden;
 }
+
+.border {
+    border: solid 2px #7441f3;
+ }

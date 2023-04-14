@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 import styles from "./Cameras.module.scss";
 import CardComponent from "../card/Card";
+import classNames from "classnames";
 
 export default function Cameras({
     cameras = [
@@ -45,12 +46,12 @@ export default function Cameras({
                                 src={camera.videoUrl}
                                 muted
                                 onClick={() => onClick(camera)}
-                                className={styles.item}
+                                className={classNames(styles.item, (selectedCamera?.videoUrl === camera.videoUrl) && styles.border)}
                                 paused
                             />
                         ))}
                         <div className={styles.button}>
-                            {hasButton && <CardComponent iconUrl="/images/plus.svg" outlined={true} />}
+                            {hasButton && <CardComponent iconUrl="/images/plus.svg" outlined/>}
                         </div>
                     </div>
                 </Grid>
