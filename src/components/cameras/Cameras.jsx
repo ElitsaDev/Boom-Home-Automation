@@ -30,11 +30,13 @@ export default function Cameras({
             <Grid item xs={12} container>
                 <Grid item xs container direction="column" spacing={3}>
                     <Grid item xs={9} >
+                        <video autoPlay>
                             <CardComponent
                                 className={styles.box}
                                 iconUrl={cameras.id}
                                 allow="autoPlay"
                             />
+                         </video>   
                     </Grid>
 
                     <Grid item xs={3}>
@@ -45,7 +47,9 @@ export default function Cameras({
                                     {cameras.map((camera, index) =>{
                                         
                                          <Grid key={index} item xs={6}>  
-                                             <CardComponent component="video" height="50px" width="50px" iconUrl={camera.videoUrl} onClick={onClick} />    
+                                            <video onPause={true}>
+                                             <CardComponent height="50px" width="50px" iconUrl={camera.videoUrl} onClick={onClick} />    
+                                            </video>
                                          </Grid>
                                     })}
                                     {hasButton && <CardComponent iconUrl="/images/plus.svg" />}       
