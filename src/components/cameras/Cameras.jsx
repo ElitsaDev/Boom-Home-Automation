@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 import styles from "./Cameras.module.scss";
-import classNames from "classnames";
 import CardComponent from "../card/Card";
 
 export default function Cameras({
     cameras = [
-        { videoUrl: "/videos/balcony.mp4" },
+        { videoUrl: "/videos/front-door.mp4" },
         { videoUrl: "/videos/balcony.mp4" },
         { videoUrl: "/videos/balcony.mp4" },
         { videoUrl: "/videos/balcony.mp4" },
@@ -16,48 +15,44 @@ export default function Cameras({
     ],
     hasButton = true,
 }) {
-    const [id, setId] = useState(0);
-    const [selectedVideo, setSelectedVideo] = useState(false);
+
+    const [selectedCamera, setSelectedCamera] = useState([]);
+
     useEffect(() => {
-        setId(id)
+        if (cameras.length > 0)
+            setSelectedCamera(cameras[0]);
     }, []);
 
-    const onClick = () => {
-        setSelectedVideo(true)
+    const onClick = (camera) => {
+        setSelectedCamera(camera)
     }
 
     return (
-        <div className={classNames(styles["cameras-container"])}>
-
-            <Grid item xs={12} container>
-                <Grid item xs container direction="column" spacing={3}>
-                    <Grid item xs={9} >
-                        <video autoPlay>
-                            <CardComponent
-                                className={styles.box}
-                                iconUrl={cameras.id}
-                                allow="autoPlay"
+        <div className={styles.container}>
+            <Grid container spacing={2}>
+                <Grid item xs={12} md={8} >
+                    <video autoPlay
+                        controls
+                        className={styles.box}
+                        src={selectedCamera.videoUrl}
+                    />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <div className={styles['cameras-container']}>
+                        {cameras.map((camera, index) => (
+                            <video
+                                key={index}
+                                src={camera.videoUrl}
+                                muted
+                                onClick={() => onClick(camera)}
+                                className={styles.item}
+                                paused
                             />
-                        </video>
-                    </Grid>
-
-                    <Grid item xs={3}>
-                        <Grid item xs container direction="column" spacing={2}>
-                            <Grid item xs={12}>
-                                <Grid item xs container direction="row" spacing={1}>
-                                    {cameras.map((camera, index) => {
-
-                                        <Grid key={index} item xs={6}>
-                                            <video onPause={true}>
-                                                <CardComponent height="50px" width="50px" iconUrl={camera.videoUrl} onClick={onClick} />
-                                            </video>
-                                        </Grid>
-                                    })}
-                                    {hasButton && <CardComponent iconUrl="/images/plus.svg" />}
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Grid>
+                        ))}
+                        <div className={styles.button}>
+                            {hasButton && <CardComponent iconUrl="/images/plus.svg" outlined={true} />}
+                        </div>
+                    </div>
                 </Grid>
             </Grid>
         </div>

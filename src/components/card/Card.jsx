@@ -11,7 +11,7 @@ export default function CardComponent({ iconUrl, outlined = false, onClick, titl
                 
                     {!!iconUrl  &&
                         <CardMedia
-                            component="video"
+                            sx={{ height: 190 }}
                             image={iconUrl}
                             alt="card image"
                         />

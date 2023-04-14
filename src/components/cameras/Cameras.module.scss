@@ -1,24 +1,32 @@
 @use "../../styles/colors";
 
-.cameras-container {
+.container {
     width: 803px;
     height: 389px;
     padding: 35px 30px 39px 45px;
 }
 
 .box {
-    height: 100%;
-    width: 100%;
+    width: 487px;
+    height: 315px;
+    border-radius: 20px;
 }
 
-.container {
-    height: 400px;
+.cameras-container {
+    width: 210px;
+    height: 389px;
+    border-radius: 10px;
+    z-index: 1;  
 }
 
-.innerContainer {
-    height: 100%;
+.button {
+    width: 210px;
+    height: 90px;
 }
 
 .item {
-    flex: 1;
+    width: 97px;
+    height: 90px;
+    border-radius: 20px;
+    overflow: hidden;
 }

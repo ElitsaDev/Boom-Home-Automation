@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 export default function User({
     avatar = '/images/avatar.png',
-    name,
+    name = 'Jhone Doe',
     size,
     headingSize, 
     hasWelcome = false
