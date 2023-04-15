@@ -3,26 +3,28 @@
 .card {
     width: 243px;
     height: 183px;
-    background: rgba(116, 65, 243, 0.07);
+    background: colors.$secondary_main_translucent;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     text-align: center;
     margin: auto;
+    background-color: rgb(239, 235, 248);
 }
 
 .border {
-   border: solid 2px #7441f3;
+   border: solid 2px colors.$primary_main;
    border-radius: 20px;
 }
 
 .text{
+    margin-top: 25px;
     padding: 15px;
     text-transform: uppercase;
     font-family: 'Roboto';
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 16px;
-text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
 }

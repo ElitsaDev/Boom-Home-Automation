@@ -1,14 +1,11 @@
 import { Grid, Typography, Box, Paper } from "@mui/material";
 import CardComponent from "../card/Card";
-import classNames from "classnames";
 import styles from "./Rooms.module.scss";
-import { experimentalStyled as styled } from '@mui/material/styles';
-import BedOutlinedIcon from '@mui/icons-material/BedOutlined';
 
 export default function Rooms({ rooms }) {
 
     return (
-        <div className={classNames(styles["rooms-wrapper"])}>
+        <div className={styles["rooms-wrapper"]}>
             <Typography variant="h4">Rooms</Typography>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2} columns={{ xs: 12 }}>
