@@ -5,21 +5,15 @@ import '@fontsource/roboto/700.css';
 import CardComponent from '../src/components/card/Card';
 import Cameras from '../src/components/cameras/Cameras';
 import Energy from '../src/components/energy/Energy';
+import Scenes from '../src/components/scenes/Scenes';
 import Rooms from '../src/components/rooms/Rooms';
-import rooms from '../data/rooms.json';
+import cards from '../data/cards.json';
 export default function Index() {
-  const data = [
-    { energy: 25, hour: 12 },
-    { energy: 13, hour: 13 },
-    { energy: 14, hour: 14 },
-    { energy: 15, hour: 15 },
-    { energy: 15, hour: 16 },
-    { energy: 10, hour: 17 },
-]
+  
   return (
     <>
      {/* <Energy data={data}/> */}
-     <Rooms rooms={Object.values(rooms)} />
+     <Scenes cards={Object.values(cards)} />
     </>
   );
 }

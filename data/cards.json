@@ -1,0 +1,11 @@
+{
+    "cards":[
+    {"id": 0, "iconUrl": "/images/morning.svg" },
+    {"id": 1, "iconUrl": "/images/alarm-clock.svg" },
+    {"id": 2, "iconUrl": "/images/shower.svg" },
+    {"id": 3, "iconUrl": "/images/tea-cup.svg" },
+    {"id": 4, "iconUrl": "/images/shower.svg" },
+    {"id": 5, "iconUrl": "/images/tea-cup.svg" }
+    ]
+}
+

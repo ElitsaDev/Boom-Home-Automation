@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import styles from "./Cameras.module.scss";
 import CardComponent from "../card/Card";
 import classNames from "classnames";
@@ -12,7 +12,7 @@ export default function Cameras({
         { videoUrl: "/videos/balcony.mp4" },
         { videoUrl: "/videos/balcony.mp4" },
         { videoUrl: "/videos/balcony.mp4" },
-        { videoUrl: "/videos/balcony.mp4" },
+        
     ],
     hasButton = true,
 }) {
@@ -30,6 +30,7 @@ export default function Cameras({
 
     return (
         <div className={styles.container}>
+            <Typography variant="h4" className={styles.title}>Cameras</Typography>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={8} >
                     <video autoPlay

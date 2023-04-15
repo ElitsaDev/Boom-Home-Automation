@@ -1,10 +1,10 @@
-import { Container, Paper, Button, CircularProgress, Typography, Grid } from "@mui/material";
+import { useState } from "react";
+import styles from "./Thermostat.module.scss";
+import classNames from "classnames";
+import {  Paper, Button, CircularProgress, Typography, Grid } from "@mui/material";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import { Line, XAxis, YAxis, ComposedChart } from "recharts";
-import styles from "./Thermostat.module.scss";
-import { useState } from "react";
-import classNames from "classnames";
 
 export default function Thermostat({ data }) {
     const [temperature, setTemperature] = useState(15);
@@ -22,7 +22,8 @@ export default function Thermostat({ data }) {
     };
 
     return (
-        <Container className={classNames(styles.container)}>
+        <div className={classNames(styles.container)}>
+            <Typography variant="h4" className={styles.title}>Thermostat</Typography>
             <Paper className={classNames(styles.paper)}>
                 <div className='circular'>
                     <Button className={classNames(styles.progressLeft)} onClick={decrementHandler} >
@@ -56,6 +57,6 @@ export default function Thermostat({ data }) {
                     <Line type="monotone" dataKey="temperature" stroke="#fff" />
                 </ComposedChart>
             </div>
-        </Container>
+        </div>
     );
 }

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography, Box } from "@mui/material";
 import { Fragment } from "react";
 import rooms from '../../data/rooms.json';
 
@@ -12,18 +12,23 @@ import Thermostat from "../../src/components/thermostat/Thermostat";
 import Cameras from "../../src/components/cameras/Cameras";
 import Energy from "../../src/components/energy/Energy";
 import Rooms from "../../src/components/rooms/Rooms";
+import Scenes from "../../src/components/scenes/Scenes";
+import cards from '../../data/cards.json';
+import classNames from "classnames";
+import styles from "./Dashboard.module.scss";
 
 export default function Dashboard() {
-    /*  const data = [
+
+    const data = [
         { temperature: 25, hour: 12 },
         { temperature: 13, hour: 13 },
         { temperature: 14, hour: 14 },
         { temperature: 15, hour: 15 },
         { temperature: 15, hour: 16 },
         { temperature: 10, hour: 17 },
-    ]*/
+    ]
 
-    const data = [
+    const dataEnergy = [
         { energy: 25, hour: 12 },
         { energy: 13, hour: 13 },
         { energy: 14, hour: 14 },
@@ -33,19 +38,42 @@ export default function Dashboard() {
     ]
     return (
         <>
-            <Navigation />
-            <Header left={<User />}
-                right={<Fragment>
-                    <Weather />
-                    <Time />
-                </Fragment>}
-            />
+            <div className={classNames(styles.wrapper)}>
+                <div style={{ width: '100%' }}>
+                    <Grid container spacing={5}>
+                        <Navigation />
+                        <Grid item xs={12}>
+                            <Header left={<User />}
+                                right={<Fragment>
+                                    <Weather />
+                                    <Time />
+                                </Fragment>}
+                            />
+                        </Grid>
+                        <Box
+                            sx={{
+                                display: 'grid',
+                                rowGap: 15,
+                                columnGap: 3,
+                                gridTemplateColumns: 'repeat(2, 1fr)',
+                                margin: 'auto',
+                                marginLeft: 30,
+                            }}
+                        >
+                            <Thermostat data={data} />
+                            <Scenes cards={Object.values(cards)} />
+                            <Cameras />
+                            <Energy data={dataEnergy} />
 
-            <Thermostat data={data} />
-            <Cameras />
-            <Energy data={data} />
-            <Rooms rooms={Object.values(rooms)} />
+                        </Box>
+                        <Grid item xs={12} sx={{ marginLeft: 30 }}>
+
+                        </Grid>
+                        <Rooms rooms={Object.values(rooms)} />
+                    </Grid>
+                </div>
+            </div>
+
         </>
     );
-
 }

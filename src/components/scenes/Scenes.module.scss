@@ -1,5 +1,17 @@
+@use "../../styles/colors";
 
 .scenes-container{
-  height: 400px;
-  width: 807px;
+  height: 402px;
+  width: 100%;
+}
+
+.title {
+  display: inline-block;
+  margin-bottom: 14.7px; 
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  color: colors.$background_paper;  
 }
