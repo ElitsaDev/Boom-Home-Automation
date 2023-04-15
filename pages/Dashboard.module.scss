@@ -1,0 +1,13 @@
+@use "../src/styles/colors.scss";
+
+.wrapper {
+  padding-bottom: 100px;
+  padding-right: 0px !important;
+  background-color: #f8f8f8;
+}
+
+.container {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
