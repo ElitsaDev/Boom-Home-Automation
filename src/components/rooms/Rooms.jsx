@@ -9,7 +9,7 @@ export default function Rooms({ rooms }) {
 
     return (
         <div className={classNames(styles["rooms-wrapper"])}>
-            <Typography>Rooms</Typography>
+            <Typography variant="h4">Rooms</Typography>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2} columns={{ xs: 12 }}>
                     {Array.from(rooms[0]).map((room) => (
@@ -18,6 +18,8 @@ export default function Rooms({ rooms }) {
                             </CardComponent>
                         </Grid>
                     ))}
+                    <CardComponent title="Add room" iconUrl={'images/plus.svg'} outlined >
+                    </CardComponent>
                 </Grid>
             </Box>
         </div>

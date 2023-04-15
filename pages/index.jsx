@@ -5,6 +5,8 @@ import '@fontsource/roboto/700.css';
 import CardComponent from '../src/components/card/Card';
 import Cameras from '../src/components/cameras/Cameras';
 import Energy from '../src/components/energy/Energy';
+import Rooms from '../src/components/rooms/Rooms';
+import rooms from '../data/rooms.json';
 export default function Index() {
   const data = [
     { energy: 25, hour: 12 },
@@ -16,7 +18,8 @@ export default function Index() {
 ]
   return (
     <>
-     <Energy data={data}/>
+     {/* <Energy data={data}/> */}
+     <Rooms rooms={Object.values(rooms)} />
     </>
   );
 }
