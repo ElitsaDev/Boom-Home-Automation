@@ -4,12 +4,8 @@ import classNames from "classnames";
 import styles from "./Card.module.scss";
 import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
 export default function CardComponent({ iconUrl, outlined = false, onClick, title, variant }) {
-    const variant = {
-        on: 'on',
-        off: 'off',
-        offline: 'offline'
-    };
-    
+   
+
     return (
         <Card className={classNames(styles.card, outlined == true && styles.border, variant == "offline" && styles.colored)} onClick={onClick}>
             <CardActionArea>
