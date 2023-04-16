@@ -21,10 +21,6 @@ export default function Devices({ devices = [
         title: "offline",
         iconUrl: "/images/plug.svg",
     },
-    {
-        title: "",
-        iconUrl: "/images/plus.svg",
-    },
 ]
 }) {
 

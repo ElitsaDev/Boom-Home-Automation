@@ -11,10 +11,7 @@ export default function CardComponent({ iconUrl, outlined = false, onClick, titl
         <Card className={classNames(styles.card, outlined == true && styles.border, variant == "offline" && styles.colored)} onClick={onClick}>
             <CardActionArea>
                 {(title == "offline") &&
-
-                    <Stack spacing={1}>
                         <Chip label='!' variant="filled" />
-                    </Stack>
                 }
 
                 {title != '' ?
@@ -32,7 +29,7 @@ export default function CardComponent({ iconUrl, outlined = false, onClick, titl
                         {!!iconUrl &&
                             <CardMedia
                                 sx={{ width: 120, height: 100, margin: 'auto' }}
-                                image={iconUrl}
+                                image='/images/plus.svg'
                                 alt="card image"
                             />}
                     </CardContent>)
