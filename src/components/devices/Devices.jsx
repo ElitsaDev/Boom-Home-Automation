@@ -4,12 +4,7 @@ import styles from "./Devices.module.scss";
 
 import { Grid, Paper } from "@mui/material";
 
-export default function Devices({ devices = [
-    {
-    "title": String,
-    "iconUrl": String
-   }
-]}) {
+export default function Devices({ devices }) {
 
     const variant = {
         on: 'on',
