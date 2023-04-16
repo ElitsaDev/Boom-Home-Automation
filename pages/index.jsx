@@ -19,6 +19,8 @@ import Energy from "../src/components/energy/Energy";
 import Rooms from "../src/components/rooms/Rooms";
 import Scenes from "../src/components/scenes/Scenes";
 
+import Devices from '../src/components/devices/Devices';
+
 import classNames from "classnames";
 import styles from "./Dashboard.module.scss";
 
@@ -43,8 +45,8 @@ export default function Index() {
   return (
 
     <div className={classNames(styles.wrapper)}>
-     
-      <Container className={classNames(styles.container)} maxWidth="xl">
+     <Devices />
+      {/* <Container className={classNames(styles.container)} maxWidth="xl">
          
         <Grid container spacing={5}>
           <Navigation />
@@ -77,7 +79,7 @@ export default function Index() {
           </Grid>
           <Rooms rooms={Object.values(rooms)} />
         </Grid>
-      </Container>
+      </Container> */}
     </div>
   );
 }
