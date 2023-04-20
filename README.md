@@ -1,5 +1,5 @@
 ![banner.png](https://boomcdn.fra1.digitaloceanspaces.com/b4f29b16515bb75bf620bcd78aa6e161.jpg)
-Here you can find my sertificate : https://app.boom.dev/certificates
+
 ## 🤔 How to use
 
 ```sh
